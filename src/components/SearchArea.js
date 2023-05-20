@@ -18,7 +18,7 @@ function SearchArea({ searchRequest, setSearchRequest, handleSearch }) {
           onChange={(e) => setSearchRequest(e.target.value)}
           onKeyPress={handleKeyPress}
         />
-        <button className='btn btn-dark' onClick={handleSearch}>
+        <button className='btn btn-primary' onClick={handleSearch}>
           Go
         </button>
       </div>
