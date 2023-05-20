@@ -1,0 +1,24 @@
+@import 'variables';
+
+
+@mixin set-column-count($columns) {
+    column-count: $columns;
+    grid-template-columns: repeat($columns, 1fr);
+}
+  
+@media (max-width: 768px) {
+    .grid {
+        @include set-column-count($columns-small);
+    }
+}
+  
+@media (min-width: 769px) {
+    .grid {
+        @include set-column-count($columns-large);
+    }
+}
+
+body {
+    background-image: url('./movie_website.webp');
+    background-size: 25%;
+}
