@@ -16,14 +16,14 @@ function App() {
 
   useEffect(() => {
     fetch(API_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setMovies(data.results);
-      })
-      .catch((error) => {
-        console.error('Error fetching popular movies:', error);
-        setError('Failed to fetch popular movies.');
-      });
+    .then((response) => response.json())
+    .then((data) => {
+      setMovies(data.results);
+    })
+    .catch((error) => {
+      console.error('Error fetching popular movies:', error);
+      setError('Failed to fetch popular movies.');
+    });
   }, []);
 
   const handleSearch = () => {
@@ -54,7 +54,7 @@ function App() {
   };
 
   return (
-    <div className='container bg-dark bg-gradient bg-opacity-75'>
+    <div className='container bg-dark bg-gradient bg-opacity-75 rounded'>
       <div className='row  d-flex align-items-center mt-4 mb-4 overflow-auto'>
         <MainPageHeading heading='Movie App' />
         <SearchArea searchRequest={searchRequest} setSearchRequest={setSearchRequest} handleSearch={handleSearch} />
@@ -88,7 +88,7 @@ function App() {
       </div>
 
       <div className='favorites-container'>
-        <h2>Favorite Movies</h2>
+        <h2 className='text-light'>Favorite Movies</h2>
         <div className='grid'>
           {favorites.length > 0 ? (
             favorites.map((favoriteMovie) => (
@@ -100,7 +100,7 @@ function App() {
               />
             ))
           ) : (
-            <p>No favorite movies yet.</p>
+            <p className='text-light'>No favorite movies yet...</p>
           )}
         </div>
       </div>
