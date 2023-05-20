@@ -58,7 +58,7 @@ function App() {
   };
 
   const addToFavorites = (movieId) => {
-    const movieToAdd = movies.find((movie) => movie.id === movieId);
+    const movieToAdd = searchResults.length > 0 ? searchResults.find((movie) => movie.id === movieId) : movies.find((movie) => movie.id === movieId);
     setFavorites([...favorites, movieToAdd]);
   };
 
