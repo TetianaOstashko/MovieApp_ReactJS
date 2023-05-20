@@ -22,27 +22,28 @@ const MovieComponent = ({ id, title, poster_path, vote_average, release_date, ov
       <div className="card-body">
         <img className="card-img-top" src={API_IMAGE + poster_path} alt="Movie Poster" />
         <div className="card-body">
-          {!isFavorite ? (
-            <button
-              type="button"
-              className="btn btn-success btn-sm"
-              onClick={handleAddToFavorites}
-            >
-              Add to Favorites
+            <button type="button" className="btn btn-outline-primary btn-sm" onClick={handleShowInfo}>
+                Show Info
             </button>
-          ) : (
-            <button
-              type="button"
-              className="btn btn-danger btn-sm"
-              onClick={handleAddToFavorites}
-              disabled={!isFavorite}
-            >
-              Remove from Favorites
-            </button>
-          )}
-          <button type="button" className="btn btn-primary btn-sm" onClick={handleShowInfo}>
-            Show Info
-          </button>
+            {!isFavorite ? (
+                <button
+                    type="button"
+                    className="btn btn-outline-success btn-sm"
+                    onClick={handleAddToFavorites}
+                >
+                    Add to Favorites
+                </button>
+            ) : (
+                <button
+                    type="button"
+                    className="btn btn-outline-danger btn-sm"
+                    onClick={handleAddToFavorites}
+                    disabled={!isFavorite}
+                >
+                    Remove from Favorites
+                </button>
+            )}
+
           <Modal show={showModal} onHide={handleCloseInfo}>
             <Modal.Header closeButton>
               <Modal.Title>{title}</Modal.Title>
