@@ -4,7 +4,8 @@ body {
   text-decoration: none;
   list-style-type: none;
   outline: none;
-  background-image: url('homepage_background.png');
+  background-image: url('movie_website.webp');
+  background-size: 25%;
   color: aliceblue;
 }
 
@@ -20,3 +21,4 @@ body {
   grid-gap: 0.2em;
   justify-content: center;
 }
+
