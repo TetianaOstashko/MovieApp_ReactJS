@@ -53,7 +53,7 @@ const MovieComponent = ({ id, title, poster_path, vote_average, release_date, ov
                 className="card-img-top mx-auto d-block"
                 src={API_IMAGE + poster_path}
                 alt="Movie Poster"
-                style={{ width: "16rem" }}
+                style={{ width: "14rem" }}
               />
               <h5>
                 <svg
