@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function SearchArea({ searchRequest, setSearchRequest, handleSearch }) {
+function SearchArea({ searchRequest, setSearchRequest, handleSearch}) {
+  
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -22,6 +23,14 @@ function SearchArea({ searchRequest, setSearchRequest, handleSearch }) {
           Go
         </button>
       </div>
+
+    {/* div id='genres'>
+        <div className='genre text-light'>Action</div>
+        <div className='genre text-light'>Adventure</div>
+        <div className='genre text-light'>Drama</div>
+        <div className='genre text-light'>Comedy</div>
+      </div>*/}  
+
     </div>
   );
 }

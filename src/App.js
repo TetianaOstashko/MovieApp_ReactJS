@@ -6,6 +6,8 @@ import MovieComponent from './components/MovieComponent';
 import MainPageHeading from './components/MainPageHeading';
 import SearchArea from './components/SearchArea';
 import Loader from './components/Loader';
+import GenresFilter from './components/GenresFilter';
+import GENRES from './components/genresData';
 
 const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=c7cb8794994279fffdae398fa5892f70";
 
@@ -17,13 +19,19 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSearching, setIsSearching] = useState(false);
+  
 
+  
   useEffect(() => {
     setTimeout(() => {
       fetch(API_URL)
         .then((response) => response.json())
         .then((data) => {
-          setMovies(data.results);
+          const moviesWithGenres = data.results.map((movie) => ({
+            ...movie,
+            genres: GENRES.filter((genre) => movie.genre_ids.includes(genre.id)).map((genre) => genre.name)
+          }));
+          setMovies(moviesWithGenres);
           setIsLoading(false);
         })
         .catch((error) => {
@@ -31,7 +39,7 @@ function App() {
           setError('Failed to fetch popular movies.');
           setIsLoading(false);
         });
-    }, 3000); 
+    }, 3000);
   }, []);
 
   const handleSearch = () => {
@@ -73,6 +81,11 @@ function App() {
       <div className='row d-flex align-items-center mt-4 mb-4 overflow-auto'>
         <MainPageHeading heading='Movie App' />
         <SearchArea searchRequest={searchRequest} setSearchRequest={setSearchRequest} handleSearch={handleSearch} />
+        <GenresFilter genres={GENRES} movies={movies} />
+      </div>
+
+      <div className='row d-flex align-items-center mt-4 mb-4 overflow-auto'>
+        <h2 className='text-light'>Movie Base</h2>
       </div>
 
       {error && <div className='error-message'>{error}</div>}
@@ -81,28 +94,28 @@ function App() {
 
       {!isLoading && !isSearching && (
         <div className='grid'>
-        {searchResults.length > 0 ? (
-          searchResults.map((movieComponent) => (
-            <MovieComponent
+          {searchResults.length > 0 ? (
+            searchResults.map((movieComponent) => (
+              <MovieComponent
               key={movieComponent.id}
               {...movieComponent}
               addToFavorites={() => addToFavorites(movieComponent.id)}
               removeFromFavorites={() => removeFromFavorites(movieComponent.id)}
               isFavorite={favorites.some((movie) => movie.id === movieComponent.id)}
-            />
-          ))
-        ) : (
-          movies.map((movieComponent) => (
-            <MovieComponent
-              key={movieComponent.id}
-              {...movieComponent}
-              addToFavorites={() => addToFavorites(movieComponent.id)}
-              removeFromFavorites={() => removeFromFavorites(movieComponent.id)}
-              isFavorite={favorites.some((movie) => movie.id === movieComponent.id)}
-            />
-          ))
-        )}
-      </div>
+              />
+            ))
+          ) : (
+            movies.map((movieComponent) => (
+              <MovieComponent
+                key={movieComponent.id}
+                {...movieComponent}
+                addToFavorites={() => addToFavorites(movieComponent.id)}
+                removeFromFavorites={() => removeFromFavorites(movieComponent.id)}
+                isFavorite={favorites.some((movie) => movie.id === movieComponent.id)}
+              />
+            ))
+          )}
+        </div>
       )}
 
       <div className='favorites-container'>

@@ -1,24 +1,55 @@
 @import 'variables';
 
-
 @mixin set-column-count($columns) {
-    column-count: $columns;
-    grid-template-columns: repeat($columns, 1fr);
+  column-count: $columns;
+  grid-template-columns: repeat($columns, 1fr);
 }
-  
+
 @media (max-width: 768px) {
-    .grid {
-        @include set-column-count($columns-small);
-    }
+  .grid {
+    @include set-column-count($columns-small);
+  }
 }
-  
+
 @media (min-width: 769px) {
-    .grid {
-        @include set-column-count($columns-large);
-    }
+  .grid {
+    @include set-column-count($columns-large);
+  }
 }
 
 body {
-    background-image: url('./movie_website.webp');
-    background-size: 25%;
+  background-image: url('./movie_website.webp');
+  background-size: 25%;
+}
+
+.grid {
+  display: grid;
+  margin-left: 0.5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.2em;
+  justify-content: center;
+}
+
+.input-group {
+  margin-top: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.button-genre {
+  margin: 0 15px 5px;
+}
+
+@media (max-width: 784px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); 
+  }
 }
