@@ -1,11 +1,11 @@
-MovieApp_ReactJS - додаток, який пропонує широкий вибір фільмів та інформацію про них. Він був розроблений з використанням фреймворку React та стильової бібліотеки Bootstrap, щоб забезпечити зручний та естетичний користувацький досвід.
+MovieApp_ReactJS is an application that offers a wide selection of movies and information about them. It has been developed using the React framework and the Bootstrap styling library to provide a convenient and visually appealing user experience.
 
-Додаток пропонує наступні функції:
+The application offers the following features:
 
-    1) Перегляд фільмів: Ви можете переглядати широкий асортимент фільмів з різних жанрів та років в інтуїтивно зрозумілому інтерфейсі. Зручний пошук та фільтрація дозволяють швидко знайти саме той фільм, який вас цікавить.
+    1) Movie browsing: You can explore a wide range of movies from different genres and years in an intuitive interface. Convenient search and filtering options allow you to quickly find the movie that interests you.
 
-    2) Детальна інформація: Додаток надає докладну інформацію про кожен фільм, таку як короткий опис сюжету, рейтинг IMDb, дата релізу. Ви можете отримати повну картину про фільм перед тим, як вирішити його переглянути.
+    2) Detailed information: The app provides detailed information about each movie, such as a brief plot summary, IMDb rating, and release date. You can get a comprehensive overview of the movie before deciding to watch it.
 
-    3) Персональний переліл вподобаних фільмів: Додаток надає можливість додавати фільми до власного переліку улюблених фільмів.
+    3)Personal favorites list: The app allows you to create a personal list of favorite movies, where you can add movies that you particularly enjoy.
 
-Для запуску додатку просто налаштуйте своє середовище та пакетний менеджер npm або yarn, склонуйте репозиторій та виконайте необхідні команди. MovieApp_ReactJS був створений як фінальний проект курсу.
+To run the application, simply set up your environment and npm or yarn package manager, clone the repository, and execute the necessary commands. MovieApp_ReactJS was created as a final project for the course.
