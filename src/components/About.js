@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div>
-      <h2>About Movie App</h2>
+      <h2>About The Movie App</h2>
       <p>
         The Movie App is a web application that allows you to discover popular movies and search for your favorite films.
         You can add movies to your favorites and easily access them later.
