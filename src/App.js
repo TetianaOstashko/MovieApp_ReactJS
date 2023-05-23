@@ -8,6 +8,7 @@ import SearchArea from './components/SearchArea';
 import Loader from './components/Loader';
 import GenresFilter from './components/GenresFilter';
 import GENRES from './components/genresData';
+import About from './components/About';
 
 const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=c7cb8794994279fffdae398fa5892f70";
 
@@ -19,7 +20,7 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isSearching, setIsSearching] = useState(false);
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   
   useEffect(() => {
@@ -74,6 +75,10 @@ function App() {
   const removeFromFavorites = (movieId) => {
     const updatedFavorites = favorites.filter((movie) => movie.id !== movieId);
     setFavorites(updatedFavorites);
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
@@ -135,6 +140,17 @@ function App() {
           )}
         </div>
       </div>
+
+      <button onClick={toggleModal} className='btn btn-primary btn-sm btn-about'>About the App</button>
+
+      {isModalOpen && (
+        <div className='modal-about'>
+          <div className="modal-content-about">
+            <span className="close" onClick={toggleModal}>&times;</span>
+              <About />
+          </div>
+        </div> 
+      )}
     </div>
   );
 }
