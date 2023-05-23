@@ -2,9 +2,11 @@ MovieApp_ReactJS is an application that offers a wide selection of movies and in
 
 The application offers the following features:
 
-    - Movie browsing: You can explore a wide range of movies from different genres and years in an intuitive interface. Convenient search and filtering options allow you to quickly find the movie that interests you.
+    - Movie browsing: You can explore a wide range of movies from different genres and years in an intuitive interface. 
+    Convenient search and filtering options allow you to quickly find the movie that interests you.
 
-    - Detailed information: The app provides detailed information about each movie, such as a brief plot summary, IMDb rating, and release date. You can get a comprehensive overview of the movie before deciding to watch it.
+    - Detailed information: The app provides detailed information about each movie, such as a brief plot summary, IMDb rating, and release date. 
+    You can get a comprehensive overview of the movie before deciding to watch it.
 
     - Personal favorites list: The app allows you to create a personal list of favorite movies, where you can add movies that you particularly enjoy.
 
