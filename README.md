@@ -1,13 +1,24 @@
-MovieApp_ReactJS is an application that offers a wide selection of movies and information about them. It has been developed using the React framework and the Bootstrap styling library to provide a convenient and visually appealing user experience.
+MovieApp_ReactJS is a cutting-edge application that offers an extensive collection of movies along with comprehensive information about them. Developed using the powerful React framework and enhanced with the visually appealing Bootstrap styling library, it ensures a delightful and user-friendly experience.
 
-The application offers the following features:
+This application boasts the following impressive features:
 
-    - Movie browsing: You can explore a wide range of movies from different genres and years in an intuitive interface. 
-    Convenient search and filtering options allow you to quickly find the movie that interests you.
+- Movie browsing: Delve into a vast selection of movies spanning various genres and release years, all within an intuitive interface. 
+Enjoy the convenience of efficient search and filtering options to swiftly discover movies of interest.
 
-    - Detailed information: The app provides detailed information about each movie, such as a brief plot summary, IMDb rating, and release date. 
-    You can get a comprehensive overview of the movie before deciding to watch it.
+- Detailed information: Gain access to in-depth details about each movie, including concise plot summaries, IMDb ratings, and release dates. 
+Obtain a comprehensive overview of the movie's key aspects before making the decision to watch it.
 
-    - Personal favorites list: The app allows you to create a personal list of favorite movies, where you can add movies that you particularly enjoy.
+- Personal favorites list: Craft your own personalized list of beloved movies by effortlessly adding those that captivate you the most. 
+Keep track of your preferred films within the app.
 
-To run the application, simply set up your environment and npm or yarn package manager, clone the repository, and execute the necessary commands. MovieApp_ReactJS was created as a final project for the course.
+To launch the application, simply set up your environment with either npm or yarn package manager. Clone the repository and execute the required commands. MovieApp_ReactJS was skillfully crafted as the culminating project for a course, showcasing its exceptional quality and functionality.
+
+To run test files, follow these steps:
+
+    1. Install the React Testing Library library by running either of the following commands:
+        - npm install --save-dev @testing-library/react @testing-library/jest-dom
+        - yarn add --dev @testing-library/react
+
+    2. To execute the tests, use either of the following commands:
+        - npm test
+        - yarn test
